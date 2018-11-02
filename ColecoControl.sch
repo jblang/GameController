@@ -178,28 +178,6 @@ Wire Wire Line
 Connection ~ 8500 3050
 Wire Wire Line
 	8500 3050 8500 3150
-$Comp
-L Connector:DB9_Male J3
-U 1 1 5BC5E190
-P 7800 4300
-F 0 "J3" H 7980 4346 50  0000 L CNN
-F 1 "DB9_Male" H 7980 4255 50  0000 L CNN
-F 2 "Connector_Dsub:DSUB-9_Male_Horizontal_P2.77x2.84mm_EdgePinOffset9.90mm_Housed_MountingHolesOffset11.32mm" H 7800 4300 50  0001 C CNN
-F 3 " ~" H 7800 4300 50  0001 C CNN
-	1    7800 4300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:DB9_Male J4
-U 1 1 5BC5E1F9
-P 7800 5750
-F 0 "J4" H 7980 5796 50  0000 L CNN
-F 1 "DB9_Male" H 7980 5705 50  0000 L CNN
-F 2 "Connector_Dsub:DSUB-9_Male_Horizontal_P2.77x2.84mm_EdgePinOffset9.90mm_Housed_MountingHolesOffset11.32mm" H 7800 5750 50  0001 C CNN
-F 3 " ~" H 7800 5750 50  0001 C CNN
-	1    7800 5750
-	1    0    0    -1  
-$EndComp
 Text Label 1950 7200 0    50   ~ 0
 ~CTRL_EN_1~
 Text Label 1000 6900 0    50   ~ 0
@@ -243,55 +221,33 @@ Wire Wire Line
 Wire Wire Line
 	2950 7350 2950 7100
 Connection ~ 2950 7100
-Text Label 7250 4700 0    50   ~ 0
+Text Label 7350 4750 0    50   ~ 0
 ~UP1~
-Text Label 7250 4500 0    50   ~ 0
+Text Label 7350 4650 0    50   ~ 0
 ~DOWN1~
-Text Label 7250 4300 0    50   ~ 0
+Text Label 7350 4550 0    50   ~ 0
 ~LEFT1~
-Text Label 7250 4100 0    50   ~ 0
+Text Label 7350 4450 0    50   ~ 0
 ~RIGHT1~
-Text Label 7250 4600 0    50   ~ 0
+Text Label 7350 4250 0    50   ~ 0
 ~FIRE1~
-$Comp
-L power:VCC #PWR0105
-U 1 1 5BC62A3E
-P 7150 3900
-F 0 "#PWR0105" H 7150 3750 50  0001 C CNN
-F 1 "VCC" H 7150 4050 50  0000 C CNN
-F 2 "" H 7150 3900 50  0001 C CNN
-F 3 "" H 7150 3900 50  0001 C CNN
-	1    7150 3900
-	1    0    0    -1  
-$EndComp
-Text Label 7250 4000 0    50   ~ 0
+Text Label 7350 3950 0    50   ~ 0
 ~ALT1~
-Text Label 7250 4400 0    50   ~ 0
+Text Label 7350 4150 0    50   ~ 0
 SELECT
-Text Label 7250 6150 0    50   ~ 0
+Text Label 7350 6050 0    50   ~ 0
 ~UP2~
-Text Label 7250 5950 0    50   ~ 0
+Text Label 7350 5950 0    50   ~ 0
 ~DOWN2~
-Text Label 7250 5750 0    50   ~ 0
+Text Label 7350 5850 0    50   ~ 0
 ~LEFT2~
-Text Label 7250 5550 0    50   ~ 0
+Text Label 7350 5750 0    50   ~ 0
 ~RIGHT2~
-Text Label 7250 6050 0    50   ~ 0
+Text Label 7350 5550 0    50   ~ 0
 ~FIRE2~
-$Comp
-L power:GND #PWR0106
-U 1 1 5BC63078
-P 7150 5650
-F 0 "#PWR0106" H 7150 5400 50  0001 C CNN
-F 1 "GND" H 7150 5500 50  0000 C CNN
-F 2 "" H 7150 5650 50  0001 C CNN
-F 3 "" H 7150 5650 50  0001 C CNN
-	1    7150 5650
-	-1   0    0    -1  
-$EndComp
-Text Label 7250 5450 0    50   ~ 0
+Text Label 7350 5250 0    50   ~ 0
 ~ALT2~
-Text Label 7250 5850 0    50   ~ 0
+Text Label 7350 5450 0    50   ~ 0
 SELECT
 Text Label 6850 1600 0    50   ~ 0
 ~UP1~
@@ -1508,63 +1464,53 @@ Wire Wire Line
 Wire Wire Line
 	2800 1250 3250 1250
 Wire Wire Line
-	7150 4200 7500 4200
-Wire Wire Line
 	8300 3050 8500 3050
-Wire Wire Line
-	7150 5650 7500 5650
 $Comp
 L power:GND #PWR0107
 U 1 1 5C90ED22
-P 7150 4200
-F 0 "#PWR0107" H 7150 3950 50  0001 C CNN
-F 1 "GND" H 7150 4050 50  0000 C CNN
-F 2 "" H 7150 4200 50  0001 C CNN
-F 3 "" H 7150 4200 50  0001 C CNN
-	1    7150 4200
+P 6800 4200
+F 0 "#PWR0107" H 6800 3950 50  0001 C CNN
+F 1 "GND" H 6950 4100 50  0000 C CNN
+F 2 "" H 6800 4200 50  0001 C CNN
+F 3 "" H 6800 4200 50  0001 C CNN
+	1    6800 4200
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	7150 3900 7500 3900
+	7250 4350 7600 4350
 $Comp
 L power:VCC #PWR0109
 U 1 1 5C9298EA
-P 7150 5350
-F 0 "#PWR0109" H 7150 5200 50  0001 C CNN
-F 1 "VCC" H 7150 5500 50  0000 C CNN
-F 2 "" H 7150 5350 50  0001 C CNN
-F 3 "" H 7150 5350 50  0001 C CNN
-	1    7150 5350
+P 6850 5750
+F 0 "#PWR0109" H 6850 5600 50  0001 C CNN
+F 1 "VCC" H 6950 5750 50  0000 C CNN
+F 2 "" H 6850 5750 50  0001 C CNN
+F 3 "" H 6850 5750 50  0001 C CNN
+	1    6850 5750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7150 5350 7500 5350
+	7350 3950 7600 3950
 Wire Wire Line
-	7250 4000 7500 4000
+	7350 4450 7600 4450
 Wire Wire Line
-	7250 4100 7500 4100
+	7350 4550 7600 4550
 Wire Wire Line
-	7250 4300 7500 4300
+	7350 4650 7600 4650
 Wire Wire Line
-	7250 4400 7500 4400
+	7350 4250 7600 4250
 Wire Wire Line
-	7250 4500 7500 4500
+	7350 4750 7600 4750
 Wire Wire Line
-	7250 4600 7500 4600
+	7350 5750 7600 5750
 Wire Wire Line
-	7250 4700 7500 4700
+	7350 5950 7600 5950
 Wire Wire Line
-	7250 5550 7500 5550
+	7350 5550 7600 5550
 Wire Wire Line
-	7250 5850 7500 5850
+	7350 6050 7600 6050
 Wire Wire Line
-	7250 5950 7500 5950
-Wire Wire Line
-	7250 6050 7500 6050
-Wire Wire Line
-	7250 6150 7500 6150
-Wire Wire Line
-	7250 5750 7500 5750
+	7350 5850 7600 5850
 Wire Wire Line
 	10600 4550 10750 4550
 Wire Wire Line
@@ -1688,7 +1634,7 @@ Wire Wire Line
 Wire Wire Line
 	2800 1950 3250 1950
 Wire Wire Line
-	7250 5450 7500 5450
+	7350 5250 7600 5250
 Text Label 1600 1950 0    50   ~ 0
 M1
 Wire Wire Line
@@ -1708,4 +1654,90 @@ Text Label 2350 7000 2    50   ~ 0
 ~SELECT~
 Wire Wire Line
 	2000 7000 2350 7000
+$Comp
+L 182-009-213R561:182-009-213R561 J3
+U 1 1 5BE76971
+P 7900 4350
+F 0 "J3" H 7770 4304 50  0000 R CNN
+F 1 "182-009-213R561" H 7770 4395 50  0000 R CNN
+F 2 "182-009-213R561:NORCOMP_182-009-213R561" H 7900 4350 50  0001 L BNN
+F 3 "Unavailable" H 7900 4350 50  0001 L BNN
+F 4 "None" H 7900 4350 50  0001 L BNN "Field4"
+F 5 "NorComp Inc." H 7900 4350 50  0001 L BNN "Field5"
+F 6 "182 Series 9 Position Right Angle Socket Board Mount D-Sub Connector" H 7900 4350 50  0001 L BNN "Field6"
+F 7 "182-009-213R561" H 7900 4350 50  0001 L BNN "Field7"
+F 8 "None" H 7900 4350 50  0001 L BNN "Field8"
+	1    7900 4350
+	-1   0    0    1   
+$EndComp
+$Comp
+L 182-009-213R561:182-009-213R561 J4
+U 1 1 5BF7D4B7
+P 7900 5650
+F 0 "J4" H 7770 5604 50  0000 R CNN
+F 1 "182-009-213R561" H 7770 5695 50  0000 R CNN
+F 2 "182-009-213R561:NORCOMP_182-009-213R561" H 7900 5650 50  0001 L BNN
+F 3 "Unavailable" H 7900 5650 50  0001 L BNN
+F 4 "None" H 7900 5650 50  0001 L BNN "Field4"
+F 5 "NorComp Inc." H 7900 5650 50  0001 L BNN "Field5"
+F 6 "182 Series 9 Position Right Angle Socket Board Mount D-Sub Connector" H 7900 5650 50  0001 L BNN "Field6"
+F 7 "182-009-213R561" H 7900 5650 50  0001 L BNN "Field7"
+F 8 "None" H 7900 5650 50  0001 L BNN "Field8"
+	1    7900 5650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J5
+U 1 1 5BE33EA3
+P 6600 4050
+F 0 "J5" H 6520 4367 50  0000 C CNN
+F 1 "SEGA/COLECO" V 6750 4000 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6600 4050 50  0001 C CNN
+F 3 "~" H 6600 4050 50  0001 C CNN
+	1    6600 4050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J6
+U 1 1 5BE33F39
+P 6600 5650
+F 0 "J6" H 6520 5967 50  0000 C CNN
+F 1 "SEGA/COLECO" V 6750 5600 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6600 5650 50  0001 C CNN
+F 3 "~" H 6600 5650 50  0001 C CNN
+	1    6600 5650
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 4200 6800 4150
+Wire Wire Line
+	6800 4050 6950 4050
+Wire Wire Line
+	6800 3950 7050 3950
+Wire Wire Line
+	6800 5650 7250 5650
+Wire Wire Line
+	6800 5750 6850 5750
+Wire Wire Line
+	6950 5350 6950 4050
+Wire Wire Line
+	6950 5350 7600 5350
+Connection ~ 6950 4050
+Wire Wire Line
+	6950 4050 7600 4050
+Wire Wire Line
+	7250 4350 7250 5650
+Connection ~ 7250 5650
+Wire Wire Line
+	7250 5650 7600 5650
+Wire Wire Line
+	6950 5450 6950 5550
+Wire Wire Line
+	6950 5550 6800 5550
+Wire Wire Line
+	6950 5450 7600 5450
+Wire Wire Line
+	7350 4150 7600 4150
+Text Label 7050 3950 2    50   ~ 0
+~SELECT~
 $EndSCHEMATC
