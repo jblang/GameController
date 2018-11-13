@@ -6,13 +6,20 @@ This board is based on the schematics I found for the ColecoVision and its contr
 
 ## Controller Compatibility Modes
 
-The Atari joystick, ColecoVision controllers, and Sega Genesis gamepads all share the same basic DB-9 pinout, but the Genesis and ColecoVision expand on the standard set by Atari in different, incompatible ways.  **J5** and **J6** select between Sega and Coleco controller modes.  Both jumpers must be set to either Sega mode (left position) or Coleco mode (right position).  Atari joysticks will work in either mode.  Because Coleco mode switches the polarity of the power supply, it's possible Sega controllers could be damaged if connected in this mode, so be careful!
+The Atari joystick, ColecoVision controllers, and Sega Genesis gamepads all share the same basic DB-9 pinout, but the Genesis and ColecoVision expand on the standard set by Atari in different, incompatible ways.  `J5` and `J6` select between Sega and Coleco controller modes.  Both jumpers must be set to either Sega mode (left position) or Coleco mode (right position).  Atari joysticks will work in either mode.  Because Coleco mode switches the polarity of the power supply, it's possible Sega controllers could be damaged if connected in this mode, so be careful!
 
 ## Coleco Keypad Buttons
 
-Most ColecoVision games require the keypad to select a skill level before you can start them.  To support Coleco games when using a Sega controller or Atari joystick, I have put buttons on the board itself.  Besides the skill level select, most games only use the keypad for things like pause and restart, so not having them on the controller is not a big hardship. 
+Most ColecoVision games require the keypad to select a skill level before you can start them.  To support Coleco games when using a Sega controller or Atari joystick, I have put buttons on the board itself.  There are two rows of buttons laid out as follows:
 
-For Player 1, **J2** selects between keypad input from the on-board buttons (left position) and pass-through from the controller (right position). Pass-through mode should be selected when using ColecoVision controllers or if you want to use a 6-button Sega controller with software that supports it directly rather than ColecoVision games. 
+```
+1 2 3 4 * #
+5 6 7 8 9 0
+```
+
+Besides the skill level select, most games only use the keypad for things like pause and restart, so not having them on the controller is not a big hardship. 
+
+For Player 1, `J2` selects between keypad input from the on-board buttons (left position) and pass-through from the controller (right position). Pass-through mode should be selected when using ColecoVision controllers or if you want to use a 6-button Sega controller with software that supports it directly rather than ColecoVision games. 
 
 Player 2 input is always passed through directly from the controller (there was no room on the board for an additional multiplexer, much less the diodes or buttons). When not using ColecoVision controllers, it's possible that Player 2 pressing two directions at once will be erroneously interpreted as keypad input.
 
@@ -29,7 +36,7 @@ The board uses the standard Colecovision ports:
 
 The address lines are not fully decoded, so actually the entire range of ports 80-9F, C0-DF, and E0-FF are used by the board. In range E0-FF, addresses with the A1 line low (e.g., FC or ED) correspond to player 1, and addresses with the A1 line high (e.g., FF or EE) correspond to player 2. This is the same as on the original ColecoVision. It's possible that some games may use non-standard ports in these ranges.
 
-Since port 80 and C0 are write-only ports, it should not matter if there is a conflict with other boards using ports in the 80-9F or C0-DF range, since no bus contention will occur.  Writing to ports for other boards in these ranges will switch the controller mode, but unless you're actually using the controller, it won't matter. However, be careful if you have any boards that use addresses in range E0-FF since reading from an address in this range could lead to bus contention when both boards respond.
+Since ports in the 80-9F or C0-DF range are write-only, it should not matter if there is a conflict with other boards using the same ports, since no bus contention will occur.  Writing to ports for other boards in these ranges will switch the controller mode, but unless you're actually using the controller, it won't matter. However, be careful if you have any boards that use addresses in range E0-FF since reading from an address in this range could lead to bus contention when both boards respond.
 
 ## Bill of Materials
 
@@ -37,6 +44,7 @@ Since port 80 and C0 are write-only ports, it should not matter if there is a co
 |-|-|
 | J1 | 1x40 right angle pin header |
 | J2, J5, J6 | 1x3 straight pin header |
+| | Jumper blocks for J2, J5, and J6 |
 | J3, J4 | Norcomp 182-009-113R562 male DB-9 connector |
 | C1-C7 | 0.1uf disc or MLCC capacitors |
 | D1 - D22 | 1N4148 diodes |
@@ -45,7 +53,7 @@ Since port 80 and C0 are write-only ports, it should not matter if there is a co
 | U2 | 74HCT138 3-8 line decoder | 
 | U3 | 74HCT00 quad 2-input NAND gate |
 | U4, U5 | 74HCT541 tri-state octal buffer |
-| U6 | 74HCT257 quad 2-input MUX |
+| U6 | 74HCT257 quad 2-input mux |
 
 If you don't need Player 2 input, then the second 74HCT541 and DB-9 connector can be omitted.
 
