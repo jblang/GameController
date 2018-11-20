@@ -2,7 +2,7 @@
 
 This board provides a RC2014 joystick interface compatible with unmodified ColecoVision games.  In addition to ColecoVision controllers, this board will work with Sega Genesis Controllers or Atari Joysticks.
 
-This board is based on the schematics I found for the ColecoVision and its controller, linked below.  REV1 of the PCB contained a mistake, and I am currently preparing to manufacture a new revision to test.  Make sure you're using the latest files if you have boards manufactured.
+This board is based on the schematics I found for the ColecoVision and its controller, linked below.  REV1 of the PCB contained a major error, so make sure you're using REV2 files if you have boards manufactured.
 
 ## Controller Compatibility Modes
 
