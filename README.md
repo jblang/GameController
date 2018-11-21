@@ -1,6 +1,6 @@
-# ColecoVision Controller Board for RC2014
+# Game Controller Board for RC2014
 
-This board provides a RC2014 joystick interface compatible with unmodified ColecoVision games.  In addition to ColecoVision controllers, this board will work with Sega Genesis Controllers or Atari Joysticks.
+This board provides a DB-9 game controller interface compatible with Atari Joysticks, Sega Genesis controllers, and ColecoVision controllers.  It uses the same I/O ports as the ColecoVision so it is compatible with unmodified ColecoVision games.
 
 This board is based on the schematics I found for the ColecoVision and its controller, linked below.  REV1 of the PCB contained a major error, so make sure you're using REV2 files if you have boards manufactured.
 
@@ -8,9 +8,9 @@ This board is based on the schematics I found for the ColecoVision and its contr
 
 The Atari joystick, ColecoVision controllers, and Sega Genesis gamepads all share the same basic DB-9 pinout, but the Genesis and ColecoVision expand on the standard set by Atari in different, incompatible ways.  `J5` and `J6` select between Sega and Coleco controller modes.  Both jumpers must be set to either Sega mode (left position) or Coleco mode (right position).  Atari joysticks will work in either mode.  Because Coleco mode switches the polarity of the power supply, it's possible Sega controllers could be damaged if connected in this mode, so be careful!
 
-## Coleco Keypad Buttons
+## Numeric Keypad Buttons
 
-Most ColecoVision games require the keypad to select a skill level before you can start them.  To support Coleco games when using a Sega controller or Atari joystick, I have put buttons on the board itself.  There are two rows of buttons laid out as follows:
+Most ColecoVision games require the keypad to select a skill level before you can start them.  To support these games when using a Sega controller or Atari joystick, I have put buttons on the board itself.  There are two rows of buttons laid out as follows:
 
 ```
 1 2 3 4 * #
@@ -19,13 +19,13 @@ Most ColecoVision games require the keypad to select a skill level before you ca
 
 Besides the skill level select, most games only use the keypad for things like pause and restart, so not having them on the controller is not a big hardship. 
 
-For Player 1, `J2` selects between keypad input from the on-board buttons (left position) and pass-through from the controller (right position). Pass-through mode should be selected when using ColecoVision controllers or if you want to use a 6-button Sega controller with software that supports it directly rather than ColecoVision games. 
+For Player 1, `J2` selects between keypad input from the on-board buttons (left position) and pass-through from the controller (right position). Pass-through mode should be selected when using actual ColecoVision controllers or if you want to use a 6-button Sega controller with software that supports it directly rather than ColecoVision games. 
 
 Player 2 input is always passed through directly from the controller (there was no room on the board for an additional multiplexer, much less the diodes or buttons). When not using ColecoVision controllers, it's possible that Player 2 pressing two directions at once will be erroneously interpreted as keypad input.
 
 ## Ports
 
-The board uses the standard Colecovision ports:
+The board uses the standard ColecoVision I/O ports:
 
 - A write to port 80 will select keypad input and the secondary trigger (A on the Genesis controller). The value written is unimportant.
 - A write to port C0 will select directional input and the primary trigger (B on the Genesis controller). The value written is unimportant.
@@ -68,9 +68,9 @@ If you don't want to play ColecoVision games with Sega or Atari controllers, D1-
 
 ## Other Boards
 
-- [rc9918](https://github.com/jblang/rc9918): my TMS9918A video card for the RC2014 project can be used with this board to play ColecoVision games.
-- [SN76489](https://github.com/jblang/SN76489): my SN76489 sound card can be used witht his board to play ColecoVision games.
-- [z80ctrl](https://github.com/jblang/z80ctrl): my RC2014 bus monitor board which can be used as a bootloader for ColecoVision games.
+- [TMS9918A Video Card](https://github.com/jblang/rc9918): my TMS9918A video card for the RC2014
+- [SN76489 Sound Card](https://github.com/jblang/SN76489): my SN76489 sound card for the RC2014
+- [z80ctrl](https://github.com/jblang/z80ctrl): my AVR-based bus monitor and bootloader board for the RC2014
 
 ## License
 
