@@ -3019,7 +3019,7 @@
       (net 58 "Net-(J3-Pad5)"))
   )
 
-  (gr_text "Coleco Controller Interface REV2\n\nhttps://github.com/jblang/ColecoController\n(c) 2018 J.B. Langston" (at 190.2841 141.9352) (layer B.SilkS) (tstamp 5BD20D9E)
+  (gr_text "Game Controller Interface REV2\n\nhttps://github.com/jblang/ColecoController\n(c) 2018 J.B. Langston" (at 190.2841 141.9352) (layer B.SilkS) (tstamp 5BD20D9E)
     (effects (font (size 1.25 1.25) (thickness 0.3)) (justify mirror))
   )
   (gr_line (start 156.8958 153.13152) (end 156.93136 153.13152) (angle 90) (layer F.SilkS) (width 0.2))
