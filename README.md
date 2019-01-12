@@ -2,7 +2,38 @@
 
 This board provides a DB-9 game controller interface compatible with Atari Joysticks, Sega Genesis controllers, and ColecoVision controllers.  It uses the same I/O ports as the ColecoVision so it is compatible with unmodified ColecoVision games.
 
-This board is based on the schematics I found for the ColecoVision and its controller, linked below.  REV1 of the PCB contained a major error, so make sure you're using REV2 files if you have boards manufactured.
+This board is based on the schematics I found for the ColecoVision and its controller, linked below.
+
+## Assembly Instructions
+
+[Ready-to-Assemble Kits](https://www.tindie.com/products/mfkamprath/game-controller-card-kit-for-rc2014/) are available on Tindie.  These are sold by Michael Kamprath with my permission.  However, I offer no warranty or guarantee of support.
+
+[Gerbers](https://cdn.hackaday.io/files/1590576805094688/GameController_rev2_gerber.zip) for the PCB are available. I highly recommend [JLCPCB](https://jlcpcb.com/) for PCB fabrication. Alternatively, boards can be ordered from the shared project on [OSH Park](https://oshpark.com/shared_projects/jN9CSUPb).
+
+Refer to the [schematic](GameControl.pdf), the picture below, and the bill of materials below for assembly guidance.
+
+![GameController PCB](board.jpg)
+
+### Bill of Materials
+
+| Reference | Part |
+|-|-|
+| J1 | 1x40 right angle pin header |
+| J2, J5, J6 | 1x3 straight pin header |
+| | Jumper blocks for J2, J5, and J6 |
+| J3, J4 | Norcomp 182-009-113R562 male DB-9 connector |
+| C1-C7 | 0.1uf disc or MLCC capacitors |
+| D1 - D22 | 1N4148 diodes |
+| RN1, RN2, RN3 | Bussed 10K SIP 6 resistor network (Bourns 4607X-101-103LF or similar)|
+| SW1 - SW12 | 4-pin tactile pushbuttons (KSL0Axxx1LFTR or similar) |
+| U2 | 74HCT138 3-8 line decoder | 
+| U3 | 74HCT00 quad 2-input NAND gate |
+| U4, U5 | 74HCT541 tri-state octal buffer |
+| U6 | 74HCT257 quad 2-input mux |
+
+If you don't need Player 2 input, then the second 74HCT541 and DB-9 connector can be omitted.
+
+If you don't want to play ColecoVision games with Sega or Atari controllers, D1-D22 and SW1-SW12 can be omitted.
 
 ## Controller Compatibility Modes
 
@@ -37,27 +68,6 @@ The board uses the standard ColecoVision I/O ports:
 The address lines are not fully decoded, so actually the entire range of ports 80-9F, C0-DF, and E0-FF are used by the board. In range E0-FF, addresses with the A1 line low (e.g., FC or ED) correspond to player 1, and addresses with the A1 line high (e.g., FF or EE) correspond to player 2. This is the same as on the original ColecoVision. It's possible that some games may use non-standard ports in these ranges.
 
 Since ports in the 80-9F or C0-DF range are write-only, it should not matter if there is a conflict with other boards using the same ports, since no bus contention will occur.  Writing to ports for other boards in these ranges will switch the controller mode, but unless you're actually using the controller, it won't matter. However, be careful if you have any boards that use addresses in range E0-FF since reading from an address in this range could lead to bus contention when both boards respond.
-
-## Bill of Materials
-
-| Reference | Part |
-|-|-|
-| J1 | 1x40 right angle pin header |
-| J2, J5, J6 | 1x3 straight pin header |
-| | Jumper blocks for J2, J5, and J6 |
-| J3, J4 | Norcomp 182-009-113R562 male DB-9 connector |
-| C1-C7 | 0.1uf disc or MLCC capacitors |
-| D1 - D22 | 1N4148 diodes |
-| RN1, RN2, RN3 | Bussed 10K SIP 6 resistor network (Bourns 4607X-101-103LF or similar)|
-| SW1 - SW12 | 4-pin tactile pushbuttons (KSL0Axxx1LFTR or similar) |
-| U2 | 74HCT138 3-8 line decoder | 
-| U3 | 74HCT00 quad 2-input NAND gate |
-| U4, U5 | 74HCT541 tri-state octal buffer |
-| U6 | 74HCT257 quad 2-input mux |
-
-If you don't need Player 2 input, then the second 74HCT541 and DB-9 connector can be omitted.
-
-If you don't want to play ColecoVision games with Sega or Atari controllers, D1-D22 and SW1-SW12 can be omitted.
 
 ## References
 
