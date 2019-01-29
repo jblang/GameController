@@ -1,15 +1,15 @@
 EESchema Schematic File Version 4
-LIBS:ColecoControl-cache
+LIBS:GameControl-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Coleco Controller Interface for RC2014"
+Title "Game Controller Interface for RC2014"
 Date "2018-10-25"
-Rev "REV1"
+Rev "REV2"
 Comp "J.B. Langston"
-Comment1 "https://github.com/jblang/ColecoController"
+Comment1 "https://github.com/jblang/GameController"
 Comment2 ""
 Comment3 ""
 Comment4 ""
