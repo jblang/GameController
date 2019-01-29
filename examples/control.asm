@@ -20,50 +20,50 @@
 ; DEALINGS IN THE SOFTWARE.
 
 ; joystick ports
-joystick_port   equ $C0
-keypad_port     equ $80
-player_1_port   equ $FC
-player_2_port   equ $FF
+joystick_port:   equ $C0
+keypad_port:     equ $80
+player_1_port:   equ $FC
+player_2_port:   equ $FF
 
 ; button bit masks
-dir_mask        equ $0F
-btn_mask        equ $50
+dir_mask:        equ $0F
+btn_mask:        equ $50
 
 ; button bit positions
-btn_fire        equ 6
-btn_arm         equ 5
-btn_a           equ 7
-btn_b           equ 6
-btn_start       equ 5
-btn_c           equ 4
-dir_left        equ 3
-dir_down        equ 2
-dir_right       equ 1
-dir_up          equ 0
+btn_fire:        equ 6
+btn_arm:         equ 5
+btn_a:           equ 7
+btn_b:           equ 6
+btn_start:       equ 5
+btn_c:           equ 4
+dir_left:        equ 3
+dir_down:        equ 2
+dir_right:       equ 1
+dir_up:          equ 0
 
 ; keypad constants
-keypad_none     equ $0F
-keypad_star     equ $0A
-keypad_pound    equ $0B
+keypad_none:     equ $0F
+keypad_star:     equ $0A
+keypad_pound:    equ $0B
 
 ; map diode-encoded keypad to numeric values
 keypad_map:
-    db  keypad_none
-    db  6
-    db  1
-    db  3
-    db  9
-    db  0
-    db  keypad_star
-    db  keypad_none
-    db  2
-    db  keypad_pound
-    db  7
-    db  keypad_none
-    db  5
-    db  4
-    db  8
-    db  keypad_none
+    defb  keypad_none
+    defb  6
+    defb  1
+    defb  3
+    defb  9
+    defb  0
+    defb  keypad_star
+    defb  keypad_none
+    defb  2
+    defb  keypad_pound
+    defb  7
+    defb  keypad_none
+    defb  5
+    defb  4
+    defb  8
+    defb  keypad_none
 
 ; read joystick and buttons
 ;   return:

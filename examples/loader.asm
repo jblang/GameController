@@ -82,12 +82,12 @@ print:
 		ld	c,printf		; BDOS call to print string
 		jp	bdos
 		
-nofile:		db 	"file not found",cr,lf,eos
-success:	db	"game loaded",eos
+nofile:		defb 	"file not found",cr,lf,eos
+success:	defb	"game loaded",eos
 
-dest:		dw	gameaddr		; destination pointer
-oldsp:		dw	0			; original stack pointer
- 		ds	$40			; space for stack
+dest:		defw	gameaddr		; destination pointer
+oldsp:		defw	0			; original stack pointer
+ 		defs	$40			; space for stack
 stack:						; top of stack
 
 bios:	

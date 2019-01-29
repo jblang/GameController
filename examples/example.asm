@@ -21,11 +21,11 @@
 ; FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 ; DEALINGS IN THE SOFTWARE.    
 
-ramtop          equ $FFFF
-lf              equ $0C
-cr              equ $0D
-uarts           equ $10
-uartd           equ $11
+ramtop:         equ $FFFF
+lf:             equ $0C
+cr:             equ $0D
+uarts:          equ $10
+uartd:          equ $11
 
     org $100
 
