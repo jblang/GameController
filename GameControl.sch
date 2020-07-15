@@ -1,13 +1,12 @@
 EESchema Schematic File Version 4
-LIBS:GameControl-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Game Controller Interface for RC2014"
-Date "2018-10-25"
-Rev "REV2"
+Date "2020-07-11"
+Rev "REV3"
 Comp "J.B. Langston"
 Comment1 "https://github.com/jblang/GameController"
 Comment2 ""
@@ -182,37 +181,21 @@ Text Label 1950 7200 0    50   ~ 0
 ~CTRL_EN_1~
 Text Label 1000 6900 0    50   ~ 0
 ~CTRL_EN_2~
-Text Label 10750 2050 2    60   ~ 0
+Text Label 8500 1750 2    60   ~ 0
 D0
-Text Label 10750 2150 2    60   ~ 0
+Text Label 8500 2050 2    60   ~ 0
 D1
-Text Label 10750 2250 2    60   ~ 0
+Text Label 8500 2350 2    60   ~ 0
 D2
-Text Label 10750 2350 2    60   ~ 0
+Text Label 8500 2650 2    60   ~ 0
 D3
-Text Label 10750 2450 2    60   ~ 0
+Text Label 10850 4950 2    60   ~ 0
 D4
-Text Label 10750 2550 2    60   ~ 0
+Text Label 10850 5050 2    60   ~ 0
 D5
-Text Label 10750 2650 2    60   ~ 0
+Text Label 10850 5150 2    60   ~ 0
 D6
-Text Label 10750 2750 2    60   ~ 0
-D7
-Text Label 10750 4550 2    60   ~ 0
-D0
-Text Label 10750 4650 2    60   ~ 0
-D1
-Text Label 10750 4750 2    60   ~ 0
-D2
-Text Label 10750 4850 2    60   ~ 0
-D3
-Text Label 10750 4950 2    60   ~ 0
-D4
-Text Label 10750 5050 2    60   ~ 0
-D5
-Text Label 10750 5150 2    60   ~ 0
-D6
-Text Label 10750 5250 2    60   ~ 0
+Text Label 10850 5250 2    60   ~ 0
 D7
 Wire Wire Line
 	1400 7100 1400 7350
@@ -249,14 +232,14 @@ Text Label 7350 5950 0    50   ~ 0
 ~ALT2~
 Text Label 7350 5550 0    50   ~ 0
 SELECT
-Text Label 6850 1600 0    50   ~ 0
-~UP1~
-Text Label 6850 2200 0    50   ~ 0
-~DOWN1~
-Text Label 6850 2500 0    50   ~ 0
-~LEFT1~
-Text Label 6850 1900 0    50   ~ 0
-~RIGHT1~
+Text Label 7000 1850 0    50   ~ 0
+~UP~
+Text Label 7000 2450 0    50   ~ 0
+~DOWN~
+Text Label 7000 2750 0    50   ~ 0
+~LEFT~
+Text Label 7000 2150 0    50   ~ 0
+~RIGHT~
 Text Label 9300 2450 0    50   ~ 0
 ~ALT1~
 Text Label 9300 2650 0    50   ~ 0
@@ -886,12 +869,12 @@ $EndComp
 $Comp
 L 74xx:74LS257 U6
 U 1 1 5C039CEA
-P 7600 2100
-F 0 "U6" H 7300 3100 50  0000 C CNN
-F 1 "74HCT257" H 7300 3000 50  0000 C CNN
-F 2 "Package_DIP:DIP-16_W7.62mm_Socket" H 7600 2100 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS258" H 7600 2100 50  0001 C CNN
-	1    7600 2100
+P 7750 2350
+F 0 "U6" H 7450 3350 50  0000 C CNN
+F 1 "74HCT257" H 7450 3250 50  0000 C CNN
+F 2 "Package_DIP:DIP-16_W7.62mm_Socket" H 7750 2350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS258" H 7750 2350 50  0001 C CNN
+	1    7750 2350
 	1    0    0    -1  
 $EndComp
 Text Label 10100 1250 2    50   ~ 0
@@ -933,13 +916,13 @@ Text Label 11100 1250 2    50   ~ 0
 ~ALT2~
 Text Label 11100 1350 2    50   ~ 0
 ~FIRE2~
-Text Label 6850 1500 0    50   ~ 0
+Text Label 7000 1750 0    50   ~ 0
 ~KPU~
-Text Label 6850 1800 0    50   ~ 0
+Text Label 7000 2050 0    50   ~ 0
 ~KPR~
-Text Label 6850 2100 0    50   ~ 0
+Text Label 7000 2350 0    50   ~ 0
 ~KPD~
-Text Label 6850 2400 0    50   ~ 0
+Text Label 7000 2650 0    50   ~ 0
 ~KPL~
 $Comp
 L Device:R_Network06_US RN3
@@ -975,54 +958,41 @@ Wire Wire Line
 	8550 800  8550 850 
 NoConn ~ 8950 1250
 NoConn ~ 8950 1350
-Text Label 8350 1500 2    50   ~ 0
-~MUX1U~
-Text Label 8350 1800 2    50   ~ 0
-~MUX1R~
-Text Label 8350 2100 2    50   ~ 0
-~MUX1D~
-Text Label 8350 2400 2    50   ~ 0
-~MUX1L~
 Text Label 9300 2050 0    50   ~ 0
-~MUX1U~
+~UP1~
 Text Label 9300 2150 0    50   ~ 0
-~MUX1R~
+~RIGHT1~
 Text Label 9300 2250 0    50   ~ 0
-~MUX1D~
+~DOWN1~
 Text Label 9300 2350 0    50   ~ 0
-~MUX1L~
+~LEFT1~
 $Comp
 L power:VCC #PWR0121
 U 1 1 5C095BB1
-P 7600 1150
-F 0 "#PWR0121" H 7600 1000 50  0001 C CNN
-F 1 "VCC" H 7600 1300 50  0000 C CNN
-F 2 "" H 7600 1150 50  0001 C CNN
-F 3 "" H 7600 1150 50  0001 C CNN
-	1    7600 1150
+P 7750 1400
+F 0 "#PWR0121" H 7750 1250 50  0001 C CNN
+F 1 "VCC" H 7750 1550 50  0000 C CNN
+F 2 "" H 7750 1400 50  0001 C CNN
+F 3 "" H 7750 1400 50  0001 C CNN
+	1    7750 1400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7600 1200 7600 1150
+	7750 1450 7750 1400
 $Comp
 L power:GND #PWR0122
 U 1 1 5C09A420
-P 7600 3150
-F 0 "#PWR0122" H 7600 2900 50  0001 C CNN
-F 1 "GND" H 7600 3000 50  0000 C CNN
-F 2 "" H 7600 3150 50  0001 C CNN
-F 3 "" H 7600 3150 50  0001 C CNN
-	1    7600 3150
+P 7750 3400
+F 0 "#PWR0122" H 7750 3150 50  0001 C CNN
+F 1 "GND" H 7750 3250 50  0000 C CNN
+F 2 "" H 7750 3400 50  0001 C CNN
+F 3 "" H 7750 3400 50  0001 C CNN
+	1    7750 3400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7600 3100 7600 3150
-Wire Wire Line
-	7100 2800 7100 3100
-Wire Wire Line
-	7100 3100 7600 3100
-Connection ~ 7600 3100
-Text Label 7000 2800 2    50   ~ 0
+	7750 3350 7750 3400
+Text Label 6850 3050 2    50   ~ 0
 SELECT
 $Comp
 L Switch:SW_Push_Open SW9
@@ -1424,29 +1394,27 @@ Wire Wire Line
 $Comp
 L Connector_Generic:Conn_01x03 J2
 U 1 1 5BD52D83
-P 6500 2700
-F 0 "J2" H 6420 3017 50  0000 C CNN
-F 1 "BTN/CTRL" V 6650 2650 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6500 2700 50  0001 C CNN
-F 3 "~" H 6500 2700 50  0001 C CNN
-	1    6500 2700
+P 6350 2950
+F 0 "J2" H 6270 3267 50  0000 C CNN
+F 1 "BTN/CTRL" V 6500 2900 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6350 2950 50  0001 C CNN
+F 3 "~" H 6350 2950 50  0001 C CNN
+	1    6350 2950
 	-1   0    0    -1  
 $EndComp
 $Comp
 L power:VCC #PWR0104
 U 1 1 5BD530EB
-P 6750 2600
-F 0 "#PWR0104" H 6750 2450 50  0001 C CNN
-F 1 "VCC" H 6750 2750 50  0000 C CNN
-F 2 "" H 6750 2600 50  0001 C CNN
-F 3 "" H 6750 2600 50  0001 C CNN
-	1    6750 2600
+P 6600 2850
+F 0 "#PWR0104" H 6600 2700 50  0001 C CNN
+F 1 "VCC" H 6600 3000 50  0000 C CNN
+F 2 "" H 6600 2850 50  0001 C CNN
+F 3 "" H 6600 2850 50  0001 C CNN
+	1    6600 2850
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	6750 2600 6700 2600
-Wire Wire Line
-	6700 2700 7100 2700
+	6600 2850 6550 2850
 Wire Wire Line
 	2950 7100 3350 7100
 Wire Wire Line
@@ -1503,38 +1471,6 @@ Wire Wire Line
 	7350 5250 7600 5250
 Wire Wire Line
 	7350 5650 7600 5650
-Wire Wire Line
-	10600 4550 10750 4550
-Wire Wire Line
-	10600 4650 10750 4650
-Wire Wire Line
-	10600 4750 10750 4750
-Wire Wire Line
-	10600 4850 10750 4850
-Wire Wire Line
-	10600 4950 10750 4950
-Wire Wire Line
-	10600 5050 10750 5050
-Wire Wire Line
-	10600 5150 10750 5150
-Wire Wire Line
-	10600 5250 10750 5250
-Wire Wire Line
-	10600 2050 10750 2050
-Wire Wire Line
-	10600 2150 10750 2150
-Wire Wire Line
-	10600 2250 10750 2250
-Wire Wire Line
-	10600 2350 10750 2350
-Wire Wire Line
-	10600 2450 10750 2450
-Wire Wire Line
-	10600 2550 10750 2550
-Wire Wire Line
-	10600 2650 10750 2650
-Wire Wire Line
-	10600 2750 10750 2750
 Wire Wire Line
 	9300 4550 9600 4550
 Wire Wire Line
@@ -1598,31 +1534,31 @@ Wire Wire Line
 Wire Wire Line
 	8950 1150 9100 1150
 Wire Wire Line
-	8100 1500 8350 1500
+	8250 1750 8500 1750
 Wire Wire Line
-	8100 1800 8350 1800
+	8250 2050 8500 2050
 Wire Wire Line
-	8100 2100 8350 2100
+	8250 2350 8500 2350
 Wire Wire Line
-	6850 1500 7100 1500
+	7000 1750 7250 1750
 Wire Wire Line
-	6850 1600 7100 1600
+	7000 1850 7250 1850
 Wire Wire Line
-	6850 1800 7100 1800
+	7000 2050 7250 2050
 Wire Wire Line
-	6850 1900 7100 1900
+	7000 2150 7250 2150
 Wire Wire Line
-	6850 2100 7100 2100
+	7000 2350 7250 2350
 Wire Wire Line
-	6850 2200 7100 2200
+	7000 2450 7250 2450
 Wire Wire Line
-	6850 2400 7100 2400
+	7000 2650 7250 2650
 Wire Wire Line
-	6850 2500 7100 2500
+	7000 2750 7250 2750
 Wire Wire Line
-	6700 2800 7000 2800
+	6550 3050 6850 3050
 Wire Wire Line
-	8100 2400 8350 2400
+	8250 2650 8500 2650
 Wire Wire Line
 	2800 1950 3250 1950
 Wire Wire Line
@@ -1744,4 +1680,66 @@ Wire Wire Line
 Connection ~ 7150 4450
 Wire Wire Line
 	7150 4450 7600 4450
+Wire Wire Line
+	6550 2950 7250 2950
+Text Label 6950 3050 0    50   ~ 0
+~CTRL_R~
+Wire Wire Line
+	6950 3050 7250 3050
+Text Label 10850 4550 2    50   ~ 0
+~UP~
+Text Label 10850 4650 2    50   ~ 0
+~RIGHT~
+Text Label 10850 4750 2    50   ~ 0
+~DOWN~
+Text Label 10850 4850 2    50   ~ 0
+~LEFT~
+Wire Wire Line
+	10600 4550 10850 4550
+Wire Wire Line
+	10600 4650 10850 4650
+Wire Wire Line
+	10600 4750 10850 4750
+Wire Wire Line
+	10600 4850 10850 4850
+Wire Wire Line
+	10600 4950 10850 4950
+Wire Wire Line
+	10600 5050 10850 5050
+Wire Wire Line
+	10600 5150 10850 5150
+Wire Wire Line
+	10600 5250 10850 5250
+Text Label 10850 2450 2    60   ~ 0
+D4
+Text Label 10850 2550 2    60   ~ 0
+D5
+Text Label 10850 2650 2    60   ~ 0
+D6
+Text Label 10850 2750 2    60   ~ 0
+D7
+Text Label 10850 2050 2    50   ~ 0
+~UP~
+Text Label 10850 2150 2    50   ~ 0
+~RIGHT~
+Text Label 10850 2250 2    50   ~ 0
+~DOWN~
+Text Label 10850 2350 2    50   ~ 0
+~LEFT~
+Wire Wire Line
+	10600 2050 10850 2050
+Wire Wire Line
+	10600 2150 10850 2150
+Wire Wire Line
+	10600 2250 10850 2250
+Wire Wire Line
+	10600 2350 10850 2350
+Wire Wire Line
+	10600 2450 10850 2450
+Wire Wire Line
+	10600 2550 10850 2550
+Wire Wire Line
+	10600 2650 10850 2650
+Wire Wire Line
+	10600 2750 10850 2750
 $EndSCHEMATC
