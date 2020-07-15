@@ -1,6 +1,6 @@
 # Game Controller Board for RC2014
 
-This board provides a DB-9 game controller interface compatible with Atari Joysticks, Sega Genesis controllers, and ColecoVision controllers.  It uses the same I/O ports as the ColecoVision so it is compatible with unmodified ColecoVision games.
+This board provides a DB-9 game controller interface compatible with Atari Joysticks, Sega Genesis controllers, and ColecoVision controllers.  It uses the same I/O ports as the ColecoVision so it is [compatible with unmodified ColecoVision games](https://hackaday.io/project/159057-game-boards-for-rc2014/log/156298-running-colecovision-games).
 
 This board is based on the schematics I found for the ColecoVision and its controller, linked below.
 
@@ -8,7 +8,7 @@ This board is based on the schematics I found for the ColecoVision and its contr
 
 [Ready-to-Assemble Kits](https://www.tindie.com/products/mfkamprath/game-controller-card-kit-for-rc2014/) are available on Tindie.  These are sold by Michael Kamprath with my permission.  However, I offer no warranty or guarantee of support.
 
-[Gerbers](https://cdn.hackaday.io/files/1590576805094688/GameController_rev2_gerber.zip) for the PCB are available. I highly recommend [JLCPCB](https://jlcpcb.com/) for PCB fabrication. Alternatively, boards can be ordered from the shared project on [OSH Park](https://oshpark.com/shared_projects/jN9CSUPb).
+[REV2 Gerbers](https://cdn.hackaday.io/files/1590576805094688/GameController_rev2_gerber.zip) for the PCB are available. I highly recommend [JLCPCB](https://jlcpcb.com/) for PCB fabrication. Alternatively, boards can be ordered from the shared project on [OSH Park](https://oshpark.com/shared_projects/jN9CSUPb).
 
 Refer to the [schematic](GameControl.pdf), the picture below, and the bill of materials below for assembly guidance.
 
@@ -41,18 +41,18 @@ The Atari joystick, ColecoVision controllers, and Sega Genesis gamepads all shar
 
 ## Numeric Keypad Buttons
 
-Most ColecoVision games require the keypad to select a skill level before you can start them.  To support these games when using a Sega controller or Atari joystick, I have put buttons on the board itself.  There are two rows of buttons laid out as follows:
+ColecoVision controllers had a numeric keypad laid out like a touch-tone phone.  Most ColecoVision games require the keypad to select a skill level before you can start them.  To support these games when using a Sega controller or Atari joystick, I have put buttons on the board itself that emulate the ColecoVision keypad.  There are two rows of buttons laid out as follows:
 
 ```
 1 2 3 4 * #
 5 6 7 8 9 0
 ```
 
-Besides the skill level select, most games only use the keypad for things like pause and restart, so not having them on the controller is not a big hardship. 
+Besides the skill level select, most games only use the keypad for things like pause and restart, so not having them on the controller is not usually a big hardship. 
 
-For Player 1, `J2` selects between keypad input from the on-board buttons (left position) and pass-through from the controller (right position). Pass-through mode should be selected when using actual ColecoVision controllers or if you want to use a 6-button Sega controller with software that supports it directly rather than ColecoVision games. 
+`J2` selects between keypad input using the on-board buttons (left position) and pass-through from the controller (right position). On-board buttons should be enabled if you want to use Sega or Atari controllers with ColecoVision games.  Pass-through mode should be enabled when using actual ColecoVision controllers or if you want to use a 6-button Sega controller with software that supports it directly. When using non-ColecoVision controllers in passthrough mode, pressing two directions at once may be erroneously interpreted as keypad input by ColecoVision games.
 
-Player 2 input is always passed through directly from the controller (there was no room on the board for an additional multiplexer, much less the diodes or buttons). When not using ColecoVision controllers, it's possible that Player 2 pressing two directions at once will be erroneously interpreted as keypad input.
+On REV2 boards, `J2` only affects Player 1 input, while Player 2 input is always passed through directly from the controller.  On REV3 boards, the onboard buttons are used for both Player 1 and Player 2 when `J2` is not in passthrough mode. 
 
 ## Ports
 
@@ -71,6 +71,8 @@ Since ports in the 80-9F or C0-DF range are write-only, it should not matter if 
 
 ## References
 
+- [Example Code](examples)
+- [Instructions for running ColecoVision Games](https://hackaday.io/project/159057-game-boards-for-rc2014/log/156298-running-colecovision-games)
 - [ColecoVision Schematics](http://www.atarihq.com/danb/files/colecovision.pdf)
 - [ColecoVision Controller Schematics](http://www.chromesphere.net/coleco/Documents/ColecoController.pdf)
 - [ColecoVision Programming Info](http://www.atarihq.com/danb/files/CV-Tech.txt)
@@ -84,7 +86,7 @@ Since ports in the 80-9F or C0-DF range are write-only, it should not matter if 
 
 ## License
 
-Copyright 2018 J.B. Langston
+Copyright 2018-2020 J.B. Langston
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
