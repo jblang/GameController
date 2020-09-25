@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Game Controller Interface for RC2014"
-Date "2020-07-11"
-Rev "REV3"
+Date "2020-09-24"
+Rev "REV4"
 Comp "J.B. Langston"
 Comment1 "https://github.com/jblang/GameController"
 Comment2 ""
