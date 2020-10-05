@@ -8,7 +8,7 @@ This board is based on the schematics I found for the ColecoVision and its contr
 
 [Ready-to-Assemble Kits](https://www.tindie.com/products/mfkamprath/game-controller-card-kit-for-rc2014/) are available on Tindie.  These are sold by Michael Kamprath with my permission.  However, I offer no warranty or guarantee of support.
 
-[REV2 Gerbers](https://cdn.hackaday.io/files/1590576805094688/GameController_rev2_gerber.zip) for the PCB are available. I highly recommend [JLCPCB](https://jlcpcb.com/) for PCB fabrication. Alternatively, boards can be ordered from the shared project on [OSH Park](https://oshpark.com/shared_projects/jN9CSUPb).
+[REV4 Gerbers](https://cdn.hackaday.io/files/1590576805094688/GameController_rev4_gerber.zip) for the PCB are available. I highly recommend [JLCPCB](https://jlcpcb.com/) for PCB fabrication. Alternatively, boards can be ordered from the shared project on [OSH Park](https://oshpark.com/shared_projects/0TYQDpgs).
 
 Refer to the [schematic](GameControl.pdf), the picture below, and the bill of materials below for assembly guidance.
 
@@ -52,7 +52,7 @@ Besides the skill level select, most games only use the keypad for things like p
 
 `J2` selects between keypad input using the on-board buttons (left position) and pass-through from the controller (right position). On-board buttons should be enabled if you want to use Sega or Atari controllers with ColecoVision games.  Pass-through mode should be enabled when using actual ColecoVision controllers or if you want to use a 6-button Sega controller with software that supports it directly. When using non-ColecoVision controllers in passthrough mode, pressing two directions at once may be erroneously interpreted as keypad input by ColecoVision games.
 
-On REV2 boards, `J2` only affects Player 1 input, while Player 2 input is always passed through directly from the controller.  On REV3 boards, the onboard buttons are used for both Player 1 and Player 2 when `J2` is not in passthrough mode. 
+On REV2 boards, `J2` only affects Player 1 input, while Player 2 input is always passed through directly from the controller.  On REV4 boards, the onboard buttons are used for both Player 1 and Player 2 when `J2` is not in passthrough mode. 
 
 ## Ports
 
